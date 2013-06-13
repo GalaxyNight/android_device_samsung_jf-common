@@ -99,6 +99,9 @@ lib/libloc_api_v02.so
 
 # Sensors
 lib/libsensirion_j1.so
+lib/libsensorhub.so
+lib/libsensorhubcontext.so
+lib/libsensorhubservice.so
 lib/libsam.so
 lib/hw/sensors.msm8960.so
 lib/hw/sensorhubs.msm8960.so
