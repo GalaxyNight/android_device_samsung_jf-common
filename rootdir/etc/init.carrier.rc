@@ -39,6 +39,12 @@ on init
     chmod 0750 /persdata/absolute
 
 on boot
+# FeliCa
+    mkdir /efs/FeliCaLock 0777 system 9004
+    chown 9004 9004 /efs/FeliCaLock/01
+    chmod 0666 /efs/FeliCaLock/01
+    chown 9004 9004 /efs/FeliCaLock/02
+    chmod 0666 /efs/FeliCaLock/02
 
 # permissions for bluetooth.
     setprop ro.bt.bdaddr_path "/efs/bluetooth/bt_addr"
@@ -112,3 +118,16 @@ on property:vpnclientpm.enable=1
 
 on property:vpnclientpm.enable=0
     stop vpnclientpm
+
+# Felica
+service mfsc /system/bin/mfsc
+    class main
+    user root
+    group system
+    oneshot
+
+service mfdp /system/bin/mfdp
+    class main
+    user root
+    group system
+    oneshot
