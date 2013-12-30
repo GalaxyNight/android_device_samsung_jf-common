@@ -36,6 +36,15 @@ TARGET_KERNEL_SELINUX_CONFIG := jfselinux_defconfig
 
 TARGET_BOOTLOADER_BOARD_NAME := MSM8960
 
+# WiFi module
+WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/dhd.ko"
+WIFI_DRIVER_MODULE_NAME := "dhd"
+
+# QCOM
+BOARD_USES_QCOM_HARDWARE := true
+TARGET_USES_QCOM_BSP := true
+COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP
+
 # Adreno configuration
 BOARD_EGL_CFG := device/samsung/jf-common/configs/egl.cfg
 
@@ -98,3 +107,6 @@ BOARD_USES_QC_TIME_SERVICES := true
 # Camera
 TARGET_NEED_CAMERA_ZSL := true
 TARGET_NEED_SAMSUNG_MAGIC_ZSL_1508 := true
+TARGET_ADD_ISO_MODE_1600 := true
+TARGET_ADD_ISO_MODE_HJR := true
+
