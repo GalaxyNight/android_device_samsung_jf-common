@@ -38,6 +38,10 @@ on init
     chown system system /persdata/absolute
     chmod 0750 /persdata/absolute
 
+on post-fs-data
+    # for felica
+    exec /sbin/felica_init.sh
+
 on boot
 
 # FeliCa
