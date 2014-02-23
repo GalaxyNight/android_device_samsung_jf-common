@@ -26,8 +26,10 @@
 #
 
 on post-fs-data
-    # for felica
-    exec /sbin/felica_init.sh
+# FeliCa
+    exec /system/bin/sh /sbin/felica_init.sh
+# NFC
+    symlink /dev/felica_cen /dev/snfc_cen
 
 on boot
 

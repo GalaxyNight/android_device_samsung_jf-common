@@ -91,10 +91,11 @@ PRODUCT_PACKAGES += \
 
 # NFC packages
 PRODUCT_PACKAGES += \
-    libnfc-nci \
-    libnfc_nci_jni \
-    nfc_nci.msm8960 \
-    NfcNci \
+#    libnfc-nci \
+#    libnfc_nci_jni \
+#    nfc_nci.msm8960 \
+#    NfcNci \
+    NfcSony \
     Tag \
     com.android.nfc_extras
 
