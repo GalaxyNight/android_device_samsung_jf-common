@@ -98,7 +98,6 @@ PRODUCT_PACKAGES += \
 #    Tag \
 #    com.android.nfc_extras
 PRODUCT_PACKAGES += \
-    NfcSony \
     Tag \
     com.android.nfc_extras
 
