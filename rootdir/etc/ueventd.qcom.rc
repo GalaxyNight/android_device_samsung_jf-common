@@ -157,6 +157,7 @@
 # NFC
 /dev/ttyHSL2              0660    nfc       nfc
 /dev/snfc_uart            0660    nfc       nfc
+/dev/snfc_cen             0440    nfc       system
 /dev/snfc_pon             0220    nfc       nfc
 /dev/snfc_hsel            0666    nfc       nfc
 /dev/snfc_intu_poll       0444    nfc       nfc
@@ -164,4 +165,3 @@
 /dev/snfc_rfs             0444    nfc       nfc
 /dev/snfc_rfs_poll        0440    nfc       nfc
 /dev/uartcc               0660    nfc       nfc
-

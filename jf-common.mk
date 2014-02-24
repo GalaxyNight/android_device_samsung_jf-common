@@ -90,11 +90,14 @@ PRODUCT_PACKAGES += \
     linville.key.pub.pem
 
 # NFC packages
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
 #    libnfc-nci \
 #    libnfc_nci_jni \
 #    nfc_nci.msm8960 \
 #    NfcNci \
+#    Tag \
+#    com.android.nfc_extras
+PRODUCT_PACKAGES += \
     NfcSony \
     Tag \
     com.android.nfc_extras
