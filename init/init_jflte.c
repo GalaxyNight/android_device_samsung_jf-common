@@ -143,6 +143,17 @@ void vendor_load_properties()
         property_set("ro.build.description", "jfltezm-user 4.2.2 JDQ39 I9508ZMUAMG1 release-keys");
         property_set("ro.product.model", "GT-I9508");
         property_set("ro.product.device", "jfltezm");
+    } else if (strstr(bootloader, "SC04E")) {
+		/* jfltedcm */
+		gsm_properties();
+        property_set("ro.build.fingerprint", "samsung/SC-04E/SC-04E:4.3/JSS15J/SC04EOMUBNB1:user/release-keys");
+        property_set("ro.build.description", "jfltedcm-user 4.3 JSS15J SC04EOMUBNB1 release-keys");
+        property_set("ro.product.model", "SC-04E");
+        property_set("ro.product.device", "jfltedcm");
+        property_set("ro.product.locale.language", "ja");
+        property_set("ro.product.locale.region", "JP");
+        property_set("ro.config.libemoji", "libemoji_docomo.so");
+        property_set("persist.radio.dcmlte", "true");
     } else if (strstr(bootloader, "I9295")) {
         /* jactivelte */
         gsm_properties();
