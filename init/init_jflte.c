@@ -143,7 +143,7 @@ void vendor_load_properties()
         property_set("ro.build.description", "jfltezm-user 4.2.2 JDQ39 I9508ZMUAMG1 release-keys");
         property_set("ro.product.model", "GT-I9508");
         property_set("ro.product.device", "jfltezm");
-    } else if (strstr(bootloader, "SC-04E")) {
+    } else if (strstr(bootloader, "SC04E")) {
 		/* jfltedcm */
 		gsm_properties();
         property_set("ro.build.fingerprint", "samsung/SC-04E/SC-04E:4.4.2/KOT49H/SC04EOMUFNF6:user/release-keys");
