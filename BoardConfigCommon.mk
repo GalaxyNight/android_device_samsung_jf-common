@@ -23,8 +23,6 @@
 # inherit from qcom-common
 -include device/samsung/qcom-common/BoardConfigCommon.mk
 
-TARGET_SPECIFIC_HEADER_PATH := device/samsung/jf-common/include
-
 # Platform
 TARGET_BOARD_PLATFORM := msm8960
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
@@ -36,7 +34,7 @@ TARGET_CPU_VARIANT := krait
 TARGET_BOOTLOADER_BOARD_NAME := MSM8960
 
 # Kernel
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 zcache msm_rtb.filter=0x3F ehci-hcd.park=3
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 zcache msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80200000
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 BOARD_KERNEL_PAGESIZE := 2048
@@ -57,8 +55,10 @@ BOARD_USES_SEPERATED_AUDIO_INPUT := true
 BOARD_USES_SEPERATED_HEADSET_MIC := true
 BOARD_USES_SEPERATED_VOICE_SPEAKER := true
 BOARD_USES_SEPERATED_VOIP := true
-TARGET_QCOM_AUDIO_VARIANT := caf
 TARGET_USES_QCOM_COMPRESSED_AUDIO := true
+QCOM_ADSP_SSR_ENABLED := false
+QCOM_ANC_HEADSET_ENABLED := false
+QCOM_FLUENCE_ENABLED := false
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/jf-common/bluetooth
@@ -82,21 +82,30 @@ BOARD_HARDWARE_CLASS += device/samsung/jf-common/cmhw
 
 # Display
 BOARD_EGL_CFG := device/samsung/jf-common/configs/egl.cfg
+BOARD_USES_LEGACY_MMAP := true
 COMMON_GLOBAL_CFLAGS += -DNEW_ION_API
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
 TARGET_NO_INITLOGO := true
-TARGET_QCOM_DISPLAY_VARIANT := caf
+
+# Fonts
+EXTENDED_FONT_FOOTPRINT := true
 
 # GPS
 TARGET_NO_RPC := true
 
+# Includes
+TARGET_SPECIFIC_HEADER_PATH += device/samsung/jf-common/include
+
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
+# Logging
+TARGET_USES_LOGD := false
+
 # Media
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
-TARGET_QCOM_MEDIA_VARIANT := caf
 
 # NFC
 BOARD_NFC_HAL_SUFFIX := msm8960
@@ -125,43 +134,11 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_RECOVERY_SWIPE := true
 TARGET_RECOVERY_FSTAB := device/samsung/jf-common/rootdir/etc/fstab.qcom
 
-# Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/jf-common/releasetools
-
-# SELinux
-BOARD_SEPOLICY_DIRS += \
-    device/samsung/jf-common/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-    file_contexts \
-    app.te \
-    bluetooth.te \
-    device.te \
-    domain.te \
-    drmserver.te \
-    file.te \
-    hci_init.te \
-    healthd.te \
-    init.te \
-    init_shell.te \
-    keystore.te \
-    kickstart.te \
-    mediaserver.te \
-    nfc.te \
-    rild.te \
-    surfaceflinger.te \
-    system.te \
-    ueventd.te \
-    wpa.te \
-    wpa_socket.te
+# RIL
+BOARD_RIL_CLASS := ../../../device/samsung/jf-common/ril
 
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true
-
-# Vendor Init
-TARGET_UNIFIED_DEVICE := true
-TARGET_INIT_VENDOR_LIB := libinit_jflte
-TARGET_LIBINIT_DEFINES_FILE := device/samsung/jf-common/init/init_jflte.c
 
 # Vold
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
