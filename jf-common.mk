@@ -171,10 +171,6 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     power.msm8960
 
-# QRNGD
-PRODUCT_PACKAGES += \
-    qrngd
-
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
@@ -225,10 +221,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.text_cache_width=2048 \
     ro.opengles.version=196608 \
     ro.sf.lcd_density=480
-
-# media
-PRODUCT_PROPERTY_OVERRIDES += \
-    media.stagefright.use-awesome=true
 
 # radio
 PRODUCT_PROPERTY_OVERRIDES += \
