@@ -56,7 +56,6 @@ BOARD_USES_SEPERATED_VOICE_SPEAKER := true
 BOARD_USES_SEPERATED_VOIP := true
 TARGET_USES_QCOM_COMPRESSED_AUDIO := true
 QCOM_ADSP_SSR_ENABLED := false
-QCOM_ANC_HEADSET_ENABLED := false
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/jf-common/bluetooth
@@ -140,8 +139,11 @@ include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/samsung/jf-common/sepolicy
 
 BOARD_SEPOLICY_UNION += \
+    bluetooth.te \
     device.te \
+    file.te \
     file_contexts \
+    genfs_contexts \
     insthk.te \
     healthd.te \
     kernel.te \
