@@ -192,7 +192,6 @@ PRODUCT_PACKAGES += \
 
 # Thermal
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermald.conf:system/etc/thermald.conf \
     $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine.conf \
     $(LOCAL_PATH)/configs/thermal-engine-8064ab.conf:system/etc/thermal-engine-8064ab.conf
 
@@ -272,7 +271,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # qualcomm
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.timed.enable=true \
-    ro.vendor.extension_library=/system/vendor/lib/libqc-opt.so
+    ro.vendor.extension_library=/system/lib/libqc-opt.so
 
 # recovery
 PRODUCT_PROPERTY_OVERRIDES += \
