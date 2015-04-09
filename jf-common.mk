@@ -186,6 +186,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstab.qcom \
     init.carrier.rc \
+    felica_init.sh \
     init.crda.sh \
     init.qcom.rc \
     init.qcom.usb.rc \
