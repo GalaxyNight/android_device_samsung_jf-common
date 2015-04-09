@@ -159,7 +159,8 @@ BOARD_SEPOLICY_UNION += \
     ueventd.te \
     vibe_dev.te \
     vold.te \
-    wpa.te
+    wpa.te \
+    felica.te
 
 # Vold
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
