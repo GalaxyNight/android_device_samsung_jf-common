@@ -1,0 +1,6 @@
+type mfsc, domain;
+type mfsc_exec, exec_type, file_type;
+init_daemon_domain(mfsc)
+
+allow mfsc felica_device:chr_file create_file_perms;
+allow mfsc self:process execmem;

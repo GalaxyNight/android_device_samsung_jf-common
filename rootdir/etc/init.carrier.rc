@@ -66,11 +66,11 @@ on boot
 service mfsc /system/bin/mfsc
     class main
     user root
-    group system
+    group system felicalock nfc
     oneshot
 
 service mfdp /system/bin/mfdp
     class main
     user root
-    group system
+    group system felicalock nfc
     oneshot
