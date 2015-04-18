@@ -6,4 +6,3 @@ type vibe_dev, dev_type;
 type felica_device, dev_type;
 type nfcfelica_device, dev_type;
 
-
