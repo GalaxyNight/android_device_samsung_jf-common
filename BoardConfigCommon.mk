@@ -162,7 +162,8 @@ BOARD_SEPOLICY_UNION += \
     wpa.te \
     felica.te \
     mfdp.te \
-    mfsc.te
+    mfsc.te \
+    snfc.te
 
 # Vold
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
