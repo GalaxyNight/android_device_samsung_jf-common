@@ -122,6 +122,9 @@ TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
+
 # RIL
 BOARD_RIL_CLASS := ../../../$(COMMON_PATH)/ril
 USE_DEVICE_SPECIFIC_DATASERVICES := true
@@ -175,3 +178,8 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun0/f
 TW_TARGET_RECOVERY_FSTAB := ../../../device/samsung/jf-common/twrp.fstab
 #BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 endif
+
+#TWRP (optional)
+#ifeq ($(WITH_TWRP),true)
+#-include device/samsung/jf-common/twrp.mk
+#endif
