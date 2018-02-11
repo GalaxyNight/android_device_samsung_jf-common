@@ -147,10 +147,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
 
-# NFC packages
-#PRODUCT_COPY_FILES += \
-#    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/#android.hardware.nfc.hce.xml
-
 #PRODUCT_PACKAGES += \
 #    libnfc-nci \
 #    libnfc_nci_jni \
@@ -189,11 +185,9 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.carrier.rc \
     felica_init.sh \
-    init.crda.sh \
     init.qcom.rc \
     init.qcom.power.rc \
     init.qcom.usb.rc \
-    init.recovery.qcom.rc \
     ueventd.qcom.rc
 
 # RIL
